@@ -14,6 +14,7 @@ RUN apt-get update; \
     rm -rf /var/lib/apt/lists/*; \
     chmod +x /entrypoint.sh; \
     python3 -m pip install pandas; \
-    python3 -m pip install xlrd
+    python3 -m pip install xlrd; \
+	python3 -m pip install openpyxl
 
 ENTRYPOINT ["/entrypoint.sh"]
