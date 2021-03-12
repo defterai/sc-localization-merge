@@ -1,0 +1,28 @@
+name: 'Merge multi-language localization documents'
+author: 'Defter'
+branding:
+  icon: 'archive'
+  color: 'yellow'
+description: 'Merge exported multi-language localization documents with latest file version'
+inputs:
+  filename:
+    description: 'Output localization ini file name'
+    default: 'global.ini'
+  reference:
+    description: 'Reference localization ini'
+    default: 'global_ref.ini'
+  version:
+    description: 'Version name of localization'
+    default: 'none'
+  documents:
+    description: 'Input document file name list'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.filename }}
+    - ${{ inputs.reference }}
+    - ${{ inputs.version }}
+    - ${{ inputs.documents }}
