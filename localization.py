@@ -243,7 +243,7 @@ class LocalizationIni:
                 outputFile.write(key)
                 outputFile.write(LocalizationIni.__delimiter)
                 outputFile.write(value)
-                outputFile.write('\r\n')
+                outputFile.write('\r')
 
     def saveToXlsxFile(self, filename, sheetName):
         outputData = [ 'en' ]
